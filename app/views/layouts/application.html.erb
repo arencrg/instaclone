@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Workspace</title>
+    
+     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+     
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<div class = "container">
+  
+  <nav class="navbar navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <a class="navbar-brand" href="#"><img src "/public/twitter.png"></a>
+      </button>
+      <a class="navbar-brand" href="#">InstaG</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to 'Home', posts_path %></li>
+        <% if user_signed_in? %>
+          <li> <%= link_to "New Post", new_post_path %> </li>
+           <li> <%= link_to 'Settings', edit_user_registration_path, :class => 'navbar-link' %> </li>
+            <li> <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> </li>
+          <% else %>
+            <li>  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %>  </li>
+            <li>  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>  </li>
+          <% end %>
+        </li>
+        
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<%= yield %>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  
+</body>
+</html>

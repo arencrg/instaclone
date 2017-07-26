@@ -1,0 +1,39 @@
+<div class="container">
+    
+<br/> <%= link_to "Cancel", posts_path %>
+<% if @post.user.user_name? == current_user.user_name? %>
+<p><%=@post.user.user_name%></p>
+<%= image_tag @post.image.url(:medium) %>
+<br/> <%= @post.caption %>
+<br/> <%= link_to "Edit Post", edit_post_path(@post) %>
+<br/><%= button_to "destroy", @post, :method => :delete %>  
+<% else %>
+<%= image_tag @post.image.url(:medium) %>
+<br/> <%= @post.caption %>
+<% end %>
+<div class="row">
+      <% if @post.comments %>
+        <% @post.comments.each do |comment| %>
+          <div class="comment">
+            <div class="user-name">
+              <%= comment.user.user_name %>
+            </div>
+            <div class="comment-content">
+              <%= comment.content %>
+            </div>
+            <% if comment.user == current_user %>
+                <%= button_to "destroy", post, :method => :delete %>    
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    </div>
+    
+    <div class="row">
+        <%= form_for [@post, @post.comments.new] do |f| %>
+        <%= f.text_field :content, placeholder: 'Add a comment...' %>
+        <% end %>
+    </div>
+    
+    </div>
