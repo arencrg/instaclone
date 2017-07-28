@@ -1,9 +1,9 @@
- = require_tree .
- = require_self
+@import url('https://fonts.googleapis.com/css?family=Roboto');
  
-body {  
+html {  
   background-color: #fafafa;
-  font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* ## NAVBAR CUSTOMISATIONS ## */

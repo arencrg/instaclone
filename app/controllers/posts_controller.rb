@@ -38,11 +38,12 @@ def update
 end
 
 def destroy
-    @post = Post.find(params[:id])
+    @comment = Comment.find(params[:id])
     if @post.present?
       @post.destroy
     end
     redirect_to posts_path
+
 end
 
 private
@@ -51,8 +52,5 @@ private
       params.require(:post).permit(:image, :caption)
     end  
     
-    def set_post
-      @post = Post.find(params[:id])
-    end
     
 end

@@ -22,7 +22,7 @@
               <%= comment.content %>
             </div>
             <% if comment.user == current_user %>
-                <%= button_to "destroy", post, :method => :delete %>    
+            <%= button_to 'Destroy Comment', post_comment_path(@post,comment), method: :delete %>
             <% end %>
           </div>
         <% end %>
@@ -31,7 +31,7 @@
     </div>
     
     <div class="row">
-        <%= form_for [@post, @post.comments.new] do |f| %>
+        <%= form_for [@post, @post.comments.build] do |f| %>
         <%= f.text_field :content, placeholder: 'Add a comment...' %>
         <% end %>
     </div>
