@@ -1,0 +1,16 @@
+<div class="editpost">
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <%= form_for @post do |f| %>
+    <div class="field">
+    <h3>Update the caption:</h3>
+     <%= f.text_area :caption, :class => 'formfield' %>
+    </div>
+    <br/>
+    <br/>
+    <%= f.submit 'Update!', :class => "buttonpost" %>
+<% end %>
+
+</div>
+</div>
+</div>

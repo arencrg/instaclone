@@ -1,38 +1,56 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
  
-html {  
-  background-color: #fafafa;
+body {  
+  background-color: #f2f7f9;
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
-/* ## NAVBAR CUSTOMISATIONS ## */
-
-.navbar-brand {
-  a {
-    color: #125688;
-  }
+#logo {
+  padding-top: 8px;
+  height: 50px;
 }
 
-.navbar-default {
-  background-color: #fff;
-  height: 54px;
-  .navbar-nav li a {
-    color: #125688;
-  }
+#logo:hover {
+   background: #428bca;
+} 
+
+#navbar {
+   top: 0;
+   width: 100%;
+   background: #428bca;
+   height: 60px;
+   width: 100%;
+
 }
 
-.navbar-container {
-  width: 70%;
-  margin: 0 auto;
+#navbar li, a {
+    color: black;
+   margin: 0 0 0 0;
+   text-decoration: none;
+   font-size: 20px;
+}
+#navbar a:hover, li:hover{
+    background: #bcced6;
+    color: #fd1d1d;
+    font-weight: bolder;
 }
 
+#navbar .open {
+    background-color: #428bca;
+    opacity: 100%;
+    z-index: 99
+}
+
+.container {
+  padding-top: 50px;
+}
 /* ## POST CUSTOMISATIONS ## */
 
 .posts-wrapper {
   padding-top: 40px;
   margin: 0 auto;
-  max-width: 642px;
+  max-width: 600px;
   width: 100%;
 }
 
@@ -41,7 +59,7 @@ html {
   border-color: #edeeee;
   border-style: solid;
   border-radius: 3px;
-  border-width: 1px;
+  border-width: 5px;
   margin-bottom: 60px;
   .post-head {
     flex-direction: row;
@@ -55,19 +73,24 @@ html {
     .user-name, .time-ago {
       display: inline;
     }
-    .user-name {
-      font-weight: 500;
-    }
+
     .time-ago {
       color: #A5A7AA;
       float: right;
     }
   }
-  .image {
+  
+}
+
+.user-name {
+  font-weight: 500;
+  padding-left: 20px;
+}
+
+.image {
     border-bottom: 1px solid #eeefef;
     border-top: 1px solid #eeefef;
   }
-}
 
 .post-bottom {
   .user-name, .comment-content {
@@ -113,30 +136,121 @@ html {
   color: #4B4F54;
 }
 
-.comment-like-form {
-  padding-top: 24px;
-  margin-top: 13px;
-  margin-left: 24px;
-  margin-right: 24px;
-  min-height: 68px;
-  align-items: center;
-  border-top: 1px solid #EEEFEF;
-  flex-direction: row;
-  justify-content: center;
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #aab8c2;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    display: inline-block;
+    text-align: center;
 }
 
-/* ## Wrapper and styling for the new and edit views ## */
-
-.form-wrapper {
-  width: 60%;
-  margin: 20px auto;
-  background-color: #fff;
-  padding: 40px;
-  border: 1px solid #eeefef;
-  border-radius: 3px;
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
 }
 
-.edit-links {
-  margin-top: 20px;
-  margin-bottom: 40px;
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.closebtn {
+    padding-top: 80%;
+    font-size: 100px;
+}
+
+.field, .actions, .sharedlinks, .form {
+    display: inline-block;
+    text-align: center;
+}
+
+#loginform, #signupform, #editaccountform {
+    display: inline-block;
+    text-align: center;
+    padding-top: 90px;
+    
+}
+
+.postphoto {
+  width: 100%;
+}
+
+#showpost, #editpost {
+  padding: 80px 20px 80px 20px;
+}
+
+.buttonshow {
+  width: 30%;
+  float: left;
+  padding: 10px 5% 10px 5%;
+  margin: 0 10% 20px 10%;
+  border-radius: 20px;
+  background: #e1306c;
+  color: white;
+}
+
+.buttonbye {
+  width: 100px;
+  color: white;
+  padding: 15px 20px 15px 20px;
+  border-radius: 20px;
+  background: #0d1a2b;
+  color: white;
+  display: inline-block;
+  text-align: center;
+}
+
+.buttonupdate {
+  width: 100px;
+  color: white;
+  padding: 15px 20px 15px 20px;
+  border-radius: 20px;
+  background: #405de6;
+  display: inline-block;
+  text-align: center;
+}
+
+#comments {
+  clear: both;
+}
+
+.buttondelete {
+  border-radius: 10px;
+  background: #c13584;
+  color: white;
+  padding: 8px 15px 8px 15px;
+
+}
+
+#commentthing {
+  width: 100%;
+}
+
+.editpost {
+  padding: 50px 50px 50px 50px;
+}
+
+.formfield {
+  width: 500px;
+}
+
+.buttonpost {
+  width: 20%;
+  padding: 20px 2% 20px 2%;
+  font: 20px;
+  margin: 0 8% 20px 8%;
+  border-radius: 20px;
+  background: #e1306c;
+  color: white;
 }

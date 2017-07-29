@@ -1,0 +1,24 @@
+<div class="newpost">
+<div class="row">
+   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <br/><br/>
+     <%= form_for(@post=Post.new) do |f| %>
+     <h3>What do you want to share, <%=current_user.user_name%>?</h3>
+     <br/><br/>
+     <div class="field">
+     <%= f.label :image %> <br/><br/>
+     <%= f.file_field :image %>
+    </div>
+    <br/><br/>
+    <div class="field">
+     <%= f.label :caption%> <br/><br/>
+     <%= f.text_area :caption, :class => "formfield" %>
+    </div>
+    <br/>
+    <br/>
+     <%= f.submit 'Post!', :class => "buttonpost" %>
+    <br/>
+     <% end %>
+</div>
+</div>
+</div>

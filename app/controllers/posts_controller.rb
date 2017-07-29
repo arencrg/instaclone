@@ -38,7 +38,7 @@ def update
 end
 
 def destroy
-    @comment = Comment.find(params[:id])
+    @post = Post.find(params[:id])
     if @post.present?
       @post.destroy
     end
@@ -51,6 +51,8 @@ private
     def post_params  
       params.require(:post).permit(:image, :caption)
     end  
+    
+    
     
     
 end

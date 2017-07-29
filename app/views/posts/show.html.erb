@@ -1,39 +1,74 @@
-<div class="container">
-    
-<br/> <%= link_to "Cancel", posts_path %>
-<% if @post.user.user_name? == current_user.user_name? %>
-<p><%=@post.user.user_name%></p>
-<%= image_tag @post.image.url(:medium) %>
-<br/> <%= @post.caption %>
-<br/> <%= link_to "Edit Post", edit_post_path(@post) %>
-<br/><%= button_to "destroy", @post, :method => :delete %>  
-<% else %>
-<%= image_tag @post.image.url(:medium) %>
-<br/> <%= @post.caption %>
-<% end %>
+<div class="container" id="showpost">
+
 <div class="row">
-      <% if @post.comments %>
-        <% @post.comments.each do |comment| %>
-          <div class="comment">
-            <div class="user-name">
-              <%= comment.user.user_name %>
-            </div>
-            <div class="comment-content">
-              <%= comment.content %>
-            </div>
-            <% if comment.user == current_user %>
-            <%= button_to 'Destroy Comment', post_comment_path(@post,comment), method: :delete %>
-            <% end %>
+  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+    <%= image_tag @post.image.url(:medium), class:"postphoto" %>
+  </div>
+  
+  <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+    <h2>@<%=@post.user.user_name%></h2>
+    <h3><%= @post.caption %></h3>
+    <small>Posted <%= time_ago_in_words(@post.created_at, include_seconds: true)  %> ago</small>
+    
+    <% if @post.user.user_name == current_user.user_name %>
+    <hr>
+
+    <%= button_to "Edit Post", "javascript:openEdit()", :class => "buttonshow"%>
+    <%= button_to "Delete Post", @post, :method => :delete, :class => "buttonshow" %>  
+    <% end %>
+
+<div id="comments">
+  <hr>
+    <% if @post.comments %>
+      <% @post.comments.each do |comment| %>
+        <div class="row">
+          <div class = "col-xs-10 col-sm-10 col-md-10 col-lg-10">
+          <strong> <%= comment.user.user_name %> </strong>  
+          <p> <%= comment.content %> </p> 
           </div>
-        <% end %>
+          <div class = "col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <% if comment.user == current_user %>
+            <%= button_to "Delete" , post_comment_path(@post,comment), method: :delete, :class => "buttondelete"%>
+          <% end %>
+          </div>
+        </div>
       <% end %>
-    </div>
-    </div>
+    <% end %>
+      
+      <%= form_for [@post, @post.comments.build] do |f| %>
+      <br/>
+      <%= f.text_field :content, placeholder: '  Add a comment...', id: "commentthing"  %>
+      <% end %>
+  </div>
     
-    <div class="row">
-        <%= form_for [@post, @post.comments.build] do |f| %>
-        <%= f.text_field :content, placeholder: 'Add a comment...' %>
-        <% end %>
-    </div>
+  </div>
+  
+  
+  
+  </div>
+
+
+<div id="mySidenav" class="sidenav">
+<br/>
+<br/>
+<%= render 'posts/newpost' %>
+<br/>
+<br/>
+<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><span class="glyphicon glyphicon-remove"></span></a>
+</div>
+
+<div id="mySidenavedit" class="sidenav">
+<br/>
+<br/>
+<%= render 'edit' %>
+<br/>
+<br/>
+<a href="javascript:void(0)" class="closebtn" onclick="closeEdit()"><span class="glyphicon glyphicon-remove"></span></a>
+</div>
+
+</div>
+  
+  
+   
+
     
-    </div>
