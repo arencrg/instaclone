@@ -43,8 +43,8 @@ group :development, :test do  # Added development group.
 end
 group :production do  # Added postgres and made it production only.
  gem 'pg'
+ gem 'rails_12factor'
 end # Added postgres and made it production only.
-gem 'rails_12factor', group: :production
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
