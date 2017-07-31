@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+
+body {
+   font-family: 'Roboto', sans-serif;
+   -webkit-font-smoothing: antialiased;
+   background: #f2f7f9;
+}
+
+#logo {
+    height: 50px;
+    padding-top: 8px;
+}
+
+#logo:hover {
+   background: #428bca;
+} 
+
+.navbar {
+   background: #428bca;
+   color: #14171a;
+   height: 60px;
+}
+.navbar li {
+  padding-top: 2px;
+  font-size: 24px;
+}
+.navbar a {
+   text-decoration: none;
+   color: #14171a;
+   font-size: 20px;
+}
+
+.navbar a:hover, a:active {
+   color: #fd1d1d;
+   background: #bcced6;
+    font-weight: bold;
+}
+
+.container {
+  padding-top: 50px;
+}
+/* ## POST CUSTOMISATIONS ## */
+
+.posts-wrapper {
+  padding-top: 40px;
+  margin: 0 auto;
+  max-width: 600px;
+  width: 100%;
+}
+
+.post {
+  background-color: #fff;
+  border-color: #edeeee;
+  border-style: solid;
+  border-radius: 3px;
+  border-width: 5px;
+  margin-bottom: 60px;
+  .post-head {
+    flex-direction: row;
+    height: 64px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 24px;
+    color: #125688;
+    font-size: 15px;
+    line-height: 18px;
+    .user-name, .time-ago {
+      display: inline;
+    }
+
+    .time-ago {
+      color: #A5A7AA;
+      float: right;
+    }
+  }
+  
+}
+
+.user-name {
+  font-weight: 500;
+  padding-left: 20px;
+}
+
+.image {
+    border-bottom: 1px solid #eeefef;
+    border-top: 1px solid #eeefef;
+  }
+
+.post-bottom {
+  .user-name, .comment-content {
+    display: inline;
+  }
+  .caption {
+    margin-bottom: 7px;
+  }
+  .user-name {
+    font-weight: 500;
+    margin-right: 0.3em;
+    color: #125688;
+    font-size: 15px;
+  }
+  .user-name, .caption-content {
+    display: inline;
+  }
+  #comment {
+    margin-top: 7px;
+    .user-name {
+      font-weight: 500;
+      margin-right: 0.3em;
+    }
+    .delete-comment {
+      float: right;
+      color: #515151;
+    }
+  }
+  margin-bottom: 7px;
+  padding-top: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 10px;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.comment_content {
+  font-size: 15px;
+  line-height: 18px;
+  border: medium none;
+  width: 100%;
+  color: #4B4F54;
+}
+
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #aab8c2;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    display: inline-block;
+    text-align: center;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.closebtn {
+    padding-top: 80%;
+    font-size: 100px;
+}
+
+.field, .actions, .sharedlinks, .form {
+    display: inline-block;
+    text-align: center;
+}
+
+#loginform, #signupform, #editaccountform {
+    display: inline-block;
+    text-align: center;
+    padding-top: 90px;
+    
+}
+
+.postphoto {
+  width: 100%;
+}
+
+#showpost, #editpost {
+  padding: 80px 20px 80px 20px;
+}
+
+.buttonshow {
+  width: 30%;
+  float: left;
+  padding: 10px 5% 10px 5%;
+  margin: 0 10% 20px 10%;
+  border-radius: 20px;
+  background: #e1306c;
+  color: white;
+}
+
+.buttonbye {
+  width: 100px;
+  color: white;
+  padding: 15px 20px 15px 20px;
+  border-radius: 20px;
+  background: #0d1a2b;
+  color: white;
+  display: inline-block;
+  text-align: center;
+}
+
+.buttonupdate {
+  width: 100px;
+  color: white;
+  padding: 15px 20px 15px 20px;
+  border-radius: 20px;
+  background: #405de6;
+  display: inline-block;
+  text-align: center;
+}
+
+#comments {
+  clear: both;
+}
+
+.buttondelete {
+  border-radius: 10px;
+  background: #c13584;
+  color: white;
+  padding: 8px 15px 8px 15px;
+
+}
+
+#commentthing {
+  width: 100%;
+}
+
+.editpost {
+  padding: 50px 50px 50px 50px;
+}
+
+.formfield {
+  width: 500px;
+}
+
+.buttonpost {
+  width: 20%;
+  padding: 20px 2% 20px 2%;
+  font: 20px;
+  margin: 0 8% 20px 8%;
+  border-radius: 20px;
+  background: #e1306c;
+  color: white;
+}
