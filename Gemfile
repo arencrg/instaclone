@@ -38,14 +38,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-group :development, :test do
-  gem 'sqlite3', '1.3.13'
+group :development, :test do  # Added development group.
+  gem 'sqlite3'
 end
-
-group :production do
-  gem 'rails_12factor', '0.0.2'
-  gem 'pg'
-end
+group :production do  # Added postgres and made it production only.
+ gem 'pg'
+end # Added postgres and made it production only.
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
