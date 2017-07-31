@@ -42,7 +42,7 @@ group :development, :test do  # Added development group.
   gem 'sqlite3'
 end
 group :production do  # Added postgres and made it production only.
- gem 'pg'
+ gem 'pg', '0.18.4'
  gem 'rails_12factor'
 end # Added postgres and made it production only.
 
